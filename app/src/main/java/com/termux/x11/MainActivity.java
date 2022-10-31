@@ -41,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (didRequestLaunchExternalDisplay()) {
+        //if (didRequestLaunchExternalDisplay()) {
             setFullScreenForExternalDisplay();
-        }
+       // }
 
         LorieService.setMainActivity(this);
         LorieService.start(LorieService.ACTION_START_FROM_ACTIVITY);
@@ -53,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.main_activity);
 
         kbd = findViewById(R.id.additionalKbd);
